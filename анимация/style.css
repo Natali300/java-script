@@ -1,0 +1,34 @@
+body{
+    background-color: #333;
+}
+.wrapper{
+    padding: 50px;
+    height: 100%;
+}
+.conteiner{
+    position: relative;
+    height: 200px;
+    background-color: #3f2525;
+}
+.block{
+    background-color: #fff;
+    height: 200px;
+    width: 200px;
+    position: absolute;
+}
+.block{
+    animation:move-block ;
+    /* animation-name:  move-block ; ьожно и так */
+    animation-duration: 3s;
+    /* animation-timing-function: ; */
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes move-block{
+    0%{
+left: 0;
+    }
+    100%{
+left: calc(100% - 200px);
+    }
+}
