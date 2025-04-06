@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="myButton">myButton</button>
+    <p id="Log"></p>
+    <script src="script.js"></script>
+    <script>
+        function incAndLog(x){
+            x = x + 1;
+            alert("inc =  " + x);
+            document.getElementById("Log").inertHTML += "<br>inc x = " + x;
+        }
+        let x = 2;
+        let logElement = document.getElementById("Log");
+        logElement.innerHTML = "x = " + x;
+        incAndLog(x);
+        logElement.innerHTML += "<br>x = " + x;
+
+        function show5Block(){
+            for(i=1; i<5; i++)
+            document.write("<h2> Header " + i + "</h2>");
+
+        }
+        show5Block();
+    </script>
+</body>
+</html>
