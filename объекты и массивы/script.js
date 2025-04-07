@@ -95,16 +95,86 @@
     //     console.log("введите правильную цену");
     // }
 
-    let fruts = ["apple", "banana", {name:"ann"},true,23,[1,2,3],]
-    fruts[2][3]
-    arreeName[0] = 34;
-    arreeName[1] = 34;
-    arreeName[2] = 34;
-    arrayName.length = 5;
-    let dpfgh = fruts.pop();
-    fruts.push();
-    fruts.pop();
-    fruts.shift();
-    fruts.unshift();
-    fruts.split();
-    fruts.join();
+    // let fruts = ["apple", "banana", {name:"ann"},true,23,[1,2,3],]
+    // fruts[2][3]
+    // arreeName[0] = 34;
+    // arreeName[1] = 34;
+    // arreeName[2] = 34;
+    // arrayName.length = 5;
+    // let dpfgh = fruts.pop();
+    // fruts.push();
+    // fruts.pop();
+    // fruts.shift();
+    // fruts.unshift();
+    // fruts.split();
+    // fruts.join();
+
+    // let fruts = ["apple", "banana", "peach"];
+    // let uppercaseFruts = fruts.map(function(frut){
+    //     return frut.toUpperCase();
+    // });
+    // console.log(uppercaseFruts);
+    // console.log(fruts);
+
+    // let fruts = ["apple", "banana", "peach"];
+    // let longFruits = fruts.filter(function(frut){
+    //     return frut.length > 5;
+    // });
+    // console.log(longFruits);
+
+// let numbers = [10,20,30,40];
+// let summ = numbers.reduce(function(accumulator, currentValue){
+//     return accumulator + currentValue;
+// }, 0);
+// console.log(summ);
+
+// let fruts = ["apple", "banana", "peach"];
+// fruts.splice(1,1);
+// console.log(fruts );
+
+// let fruts = ["apple", "banana", "peach"];
+// let someFruts = fruts.slice(0,2);
+// console.log(someFruts );
+// console.log(fruts );
+
+
+//двумерный массив
+
+
+// let matrix = [
+//     [7,8,9],
+//     [4,5,6],
+//     [1,2,3]
+// ];
+// console.log(matrix[0][0] );
+// console.log(matrix[1][2] );
+
+
+// let matrix = [
+//     [7,8,9],
+//     [4,5,6],
+//     [1,2,3]
+//  ];
+
+//  for(let i = 0; i < matrix.length; i++){
+//     let row = "";
+//     for(let j = 0; j < matrix[i].length; j++){
+//         row += matrix[i][j].toString().padStart(2, "  ") + "  ";
+//         // console.log(matrix[i][j]);
+
+//     }
+//     console.log(row);
+//  }
+
+
+
+ let matrix = [
+    [7,8,9],
+    [4,5,6],
+    [1,2,3]
+ ];
+ matrix[1][1] = 99;
+ console.log(matrix);
+
+
+
