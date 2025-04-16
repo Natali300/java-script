@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button onclick="alert('Привет')">Нажми меня</button>     //1 способ обработки события -->
+    <!-- <button>Нажми меня</button> -->
+
+
+    <!-- <button id="btn">Нажми меня срочно</button> // querySelector("button") не должно быть  -->
+    <!-- <button>Нажми меня срочно</button>          //querySelector("button") используем -->
+
+
+
+    <h2>регистрация</h2>
+    <form>
+        <label for="name">Имя:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="email">Почта:</label><br>
+        <input type="text" id="email" name="email"><br><br>
+        <button type="submit">Отправить</button>
+
+    </form>
+
+
+
+
+
+    <script src="script.js"></script>
+    <script>
+        document.querySelector('form').addEventListener('submit',function(event){
+            event.preventDefault(); //отменяем значение по умолчанию, поэтому форма не отправится на сервер
+            alert("Форма не будет отправлена");
+        });
+    </script>
+</body>
+</html>

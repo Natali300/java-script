@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button id="btn">Нажми меня</button>   //1 свойство -->
+    <!-- <button >Проверим тип</button> // 2 свойство -->
+     <p>кликните в любом месте окна браузера</p>
+    <script>
+        // 1 свойство
+        // document.querySelector('#btn').addEventListener('click',function(event){
+        //   console.log(event.target); 
+        //   event.target.textContent = 'Спасибо';
+        // });
+
+        // 2 свойство
+        // document.querySelector('button').addEventListener('click',function(event){
+        //  alert("Тип события: " + event.type);
+        //  });
+
+        // для использования мыши
+        document.addEventListener('click', function(event){
+            alert("X: " + event.clientX + " | Y: " + event.clientY); //координаты куда нажал на экран
+        });
+
+
+    </script>
+</body>
+</html>
