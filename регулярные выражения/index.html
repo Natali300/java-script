@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>поиск по списку</title>
+    <style>
+        .item{margin: 5hx 0;}
+        .hidden{display: none}
+    </style>
+</head>
+<body>
+<h2>поиск товаров</h2>
+<input type="text" id = "searchinput" placeholder ="введите товар">
+<ul id="itemList">
+<li class="item">Смартфон iPhone</li>
+<li class="item">Смартфон Xiaome</li>
+<li class="item">ноутбук Asus</li>
+<li class="item">телевизор samsung</li>
+<li class="item">планшет lenovo</li>
+<li class="item">фотокамера canon</li>
+</ul>
+    <script>
+const searchinput = document.getElementById("searchinput");
+const items = document.querySelectorAll(".item");
+searchinput.addEventListener("input",function(){
+    const serchText = searchinput.value.trim();
+    const regex = new RegExp(serchText, 'i');
+    items.forEach(item=>{
+        if(regex.test(item.textContent)){
+            item.classList.remove('hidden');
+        }
+        else{
+            item.classList.add('hidden');
+        }
+    });
+});
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
