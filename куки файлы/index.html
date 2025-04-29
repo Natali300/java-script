@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie</title>
+</head>
+<body>
+    <h2 id="greeting"></h2>
+    <input type="text" id="nameInput" placeholder="введите имя">
+    <button onclick="saveName()">сохранить</button>
+    <button onclick="deleteName">удалить</button>
+    <!-- //saveName() напишем эту функцию сами -->
+    <!-- value выбират только те символы кот ввел пользователь -->
+    <!-- encodeURIComponent(name)    для безопасного хранения информации(в данном случае это имя) -->
+     <script>
+        function deleteName(){
+            document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+            document.getElementById("greeting").textContent = "";
+        }
+        function saveName(){
+            const name = document.getElementById("nameInput").value;
+            const d = new Date();
+            // (7*24*60*60*1000) кол-во дней часов секунд милисекуд 
+            d.setTime(d.getTime() + (7*24*60*60*1000))
+            const expires = "expires=" + d.toUTCString();
+            document.cookie = "username=" + encodeURIComponent(name) + " : " + expires;
+            showGreeting();
+        };
+        function getCookie(name){
+            const cookies = document.cookie.split(" ; ");
+            // цикл для того чтоб пробежаться по всем кукам
+            for(let i = 0; i < cookies.length; i++){
+                const parts = cookies[i].split("=");
+                // надо сравнить сохраненное имя куки с той что была передана
+                if(parts[0] === name){
+                    // расшифровываем нашу куку
+                    return decodeURIComponent(parts[1]);
+
+                }
+            }
+            return null;
+        };
+        // эта функция будет показывать приветствие
+        function  showGreeting(){
+            const username= getCookie("username");
+            // проверяем есть ли это значение(т.е имя пользователя)
+            if(username){
+                document.getElementById("greeting").textContent = "привет, "+ username + " !";
+            }
+        }
+        showGreeting();
+
+
+
+        // установим срок действия куки 7 дней
+
+
+     </script>
+    <script src="script.js"></script>
+</body>
+</html>
